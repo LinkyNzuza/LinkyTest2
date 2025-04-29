@@ -6,27 +6,27 @@
 
 using namespace std;
 
-int ounces2pounds(int x)
+int ounces2pounds(int x)// function to convert ounces to pounds
 {
     return(x*16);
 }
 
-int stones2pounds(int x)
+int stones2pounds(int x)// function to convert stones to pounds
 {
     return(x*14);
 }
 
-double weight2kg(int stones, int pounds, int ounces)
+double weight2kg(int stones, int pounds, int ounces)// function to convert pounds to kilograms
 {
     return (stones2pounds(stones)+pounds+ounces2pounds(ounces))/2.2;
 }
 
-double height2metres(int feet, int inches)
+double height2metres(int feet, int inches)// function to convert feet and inches to metres
 {
     return(feet/3.82);
 }
 
-char categorise(double kg, double metre)
+char categorise(double kg, double metre)// Function to calculate bmi and categorise the bmi results into categories
 {
     double bmi = kg*kg/metre;
     char cat;
@@ -41,21 +41,21 @@ char categorise(double kg, double metre)
     return(cat);
 }
 
-void process_data(char* input_file, char* output_file)
+void process_data(char* input_file, char* output_file)// Function to read in data from a data file 
 {
     ifstream f_in;
     ofstream f_out;
     string data;
     string person_id;
     int pounds, stones, ounces, feet, inches;
-    double kg, m;
+    double kg, m;//Measurements of the converted units 
     char cat;
 
     f_in.open(input_file,ios::in);
     f_out.open(output_file,ofstream::out);
     while (!f_in.eof())
     {
-    	f_in >> person_id >> pounds >> stones >> ounces >> feet >> inches;
+    	f_in >> person_id >> pounds >> stones >> ounces >> feet >> inches;// order of how measurements are read in
         kg=weight2kg(int(stones),int(pounds),int(ounces));
         m =height2metres(int(feet),int(inches));
         cat=categorise(kg,m);
