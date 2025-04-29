@@ -23,7 +23,7 @@ double weight2kg(int stones, int pounds, int ounces)// function to convert pound
 
 double height2metres(int feet, int inches)// function to convert feet and inches to metres
 {
-    return(feet/3.28);
+    return(feet/3.28 + inches/39.37);
 }
 
 char categorise(double kg, double metre)// Function to calculate bmi and categorise the bmi results into categories
