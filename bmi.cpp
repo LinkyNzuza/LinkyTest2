@@ -1,5 +1,5 @@
 // KJN - it is good practice to insert comment about intended use, context, contributors, etc
-
+//Linky Nzuza contributor to this code
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -23,18 +23,18 @@ double weight2kg(int stones, int pounds, int ounces)// function to convert pound
 
 double height2metres(int feet, int inches)// function to convert feet and inches to metres
 {
-    return(feet/3.82);
+    return(feet/3.28);
 }
 
 char categorise(double kg, double metre)// Function to calculate bmi and categorise the bmi results into categories
 {
-    double bmi = kg*kg/metre;
+    double bmi = kg/metre*metre;
     char cat;
     if (bmi<19)
         cat='A';
-    else if (bmi<=26)
+    else if (bmi<25)
         cat='B';
-    else if (bmi<=30)
+    else if (bmi<30)
         cat='C';
     else
         cat='D';
