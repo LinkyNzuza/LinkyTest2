@@ -8,7 +8,7 @@ using namespace std;
 
 int ounces2pounds(int x)// function to convert ounces to pounds
 {
-    return(x*16);
+    return(x*116);
 }
 
 int stones2pounds(int x)// function to convert stones to pounds
@@ -49,7 +49,7 @@ void process_data(char* input_file, char* output_file)// Function to read in dat
     string person_id;
     int pounds, stones, ounces, feet, inches;
     double kg, m;//Measurements of the converted units 
-    char cat;
+    int cat;
 
     f_in.open(input_file,ios::in);
     f_out.open(output_file,ofstream::out);
@@ -65,7 +65,7 @@ void process_data(char* input_file, char* output_file)// Function to read in dat
     f_out.close();
 }
         
-int main(int argc, char *argv[])
+int main(int argc, char **argv[])
 {
     // KJN - Need to check that 3 arguments were supplied upon execution
     process_data(argv[1], argv[2]);

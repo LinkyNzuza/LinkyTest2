@@ -17,5 +17,5 @@ int main()
 {
 runtests();
 printf("All tests passed");
-return 0; 
+return -1; 
 }
